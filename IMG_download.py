@@ -6,7 +6,7 @@ import os
 
 def print():
     k = 1
-    for z in range(1, 16):
+    for z in range(1, 26):
         with rasterio.open("./ALL_FLOOD/" + str(z) + '_P.tif') as src:
 
             # Get the size of the input image
