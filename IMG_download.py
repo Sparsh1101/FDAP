@@ -7,7 +7,7 @@ import os
 def print():
     k = 1
     for z in range(1, 26):
-        with rasterio.open("./ALL_FLOOD/" + str(z) + '_P.tif') as src:
+        with rasterio.open("./ALL_FLOOD/" + str(z) + '_A.tif') as src:
 
             # Get the size of the input image
             width, height = src.width, src.height
@@ -28,7 +28,7 @@ def print():
                     data = src.read(window=window)
 
                     # Create a new TIF file for this 256x256 pixel image
-                    output_file = str(k) + "_P_256.tif"
+                    output_file = str(k) + "_A_256.tif"
                     with rasterio.open("./ALL_FLOOD_256/" + output_file, 'w', driver='GTiff', width=256, height=256, count=src.count, dtype=src.dtypes[0], crs=src.crs, transform=src.window_transform(window)) as dst:
 
                         # Write the data to the output TIF file
