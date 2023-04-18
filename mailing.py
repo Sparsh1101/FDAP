@@ -31,16 +31,16 @@ def sendEmail(receiver):
         + receiver.get("Bcc", "").split(",")
     )
 
-    mime["Subject"] = "Code Runner Update"  # Subject of the mail
+    mime["Subject"] = "DBScan Parameter Tuning"  # Subject of the mail
     # The body of the mail
     
-    text = "The values obtained from the code are\n" + str(sys.argv[0])
+    text = "Code Ran Successfully"
     body_text = MIMEText(text, 'plain')  # 
     mime.attach(body_text)  # attaching the text body into msg
 
     ## Attachments in general
     ## Replace filename to your attachments. Tested and works for png, jpeg, txt, pptx, csv
-    filename = 'Optics.ipynb' # TODO: replace your attachment filepath/name
+    filename = 'tuning.csv' # TODO: replace your attachment filepath/name
     with open(filename, 'rb') as fp:
         attachment = MIMEApplication(fp.read())
         attachment.add_header('Content-Disposition', 'attachment', filename=filename)
@@ -61,6 +61,6 @@ def sendEmail(receiver):
         )
         print(e)
 
-test_run = {"To": "devansh.ts@somaiya.edu", "Cc": "sparshtgupta@gmail.com,hardikriyasparsh@gmail.com", "Bcc": ""}
+test_run = {"To": "sparshtgupta@gmail.com", "Cc": "hardikriyasparsh@gmail.com", "Bcc": ""}
 
 sendEmail(test_run)
