@@ -61,6 +61,6 @@ def sendEmail(receiver):
         )
         print(e)
 
-test_run = {"To": "sparshtgupta@gmail.com", "Cc": "hardikriyasparsh@gmail.com", "Bcc": ""}
+test_run = {"To": "sparshtgupta@gmail.com", "Cc": "devansh.ts@somaiya.edu, hardikriyasparsh@gmail.com,  hardik.kj@somaiya.edu, riya.rege@somaiya.edu", "Bcc": ""}
 
 sendEmail(test_run)
