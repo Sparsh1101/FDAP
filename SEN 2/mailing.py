@@ -34,17 +34,17 @@ def sendEmail(receiver):
     mime["Subject"] = "DBScan Parameter Tuning"  # Subject of the mail
     # The body of the mail
     
-    text = "Code Ran Successfully"
+    text = str(sys.argv[0])
     body_text = MIMEText(text, 'plain')  # 
     mime.attach(body_text)  # attaching the text body into msg
 
     ## Attachments in general
     ## Replace filename to your attachments. Tested and works for png, jpeg, txt, pptx, csv
-    filename = 'tuning.csv' # TODO: replace your attachment filepath/name
-    with open(filename, 'rb') as fp:
-        attachment = MIMEApplication(fp.read())
-        attachment.add_header('Content-Disposition', 'attachment', filename=filename)
-        mime.attach(attachment)
+    # filename = "" # TODO: replace your attachment filepath/name
+    # with open(filename, 'rb') as fp:
+    #     attachment = MIMEApplication(fp.read())
+    #     attachment.add_header('Content-Disposition', 'attachment', filename=filename)
+    #     mime.attach(attachment)
 
     # Actually sending the mail after completing all the configurations above
     try:
